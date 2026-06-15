@@ -1,11 +1,13 @@
 # 1. 推送到Github
 
 ```cmd
+// 第一次需要
 git init
 git add .
 git commit -m "first commit"
-git branch -M main
+// 第一次需要 
 git remote add origin <你的GitHub仓库地址>
-git push -u origin main
+// 第一次必须这样写 git push -u origin main
+git push 
 ```
 
