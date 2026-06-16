@@ -1,16 +1,13 @@
-## Hi there 👋
+<center>
 
-<!--
-**v5v5v5v/v5v5v5v** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# 书山有路勤为径
 
-Here are some ideas to get you started:
+# 学海无涯苦作舟
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+</center>
+
+> **学习如登山，勤奋是路径；求学似航海，刻苦作舟船。**
+
+
+> 勤奋是成功的通行证，刻苦是学问的渡海舟。
+ 
