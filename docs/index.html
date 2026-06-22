@@ -49,6 +49,15 @@
         // 搜索结果中是否显示文件路径
         showPath: true,
       },
+      plugins: [
+        function (hook) {
+          hook.doneEach(function () {
+            document.querySelectorAll('img').forEach(img => {
+              img.crossOrigin = 'anonymous'
+            })
+          })
+        }
+      ]
     }
   </script>
   <!-- Docsify v4 -->
