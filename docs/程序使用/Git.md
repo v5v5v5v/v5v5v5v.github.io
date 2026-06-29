@@ -5,6 +5,15 @@
 git clone https://github.com/v5v5v5v/docsify.git
 ```
 
+## 设置
+
+```bash
+// 永久拉取默认使用 rebase，避免分叉报错：
+git config --global pull.rebase true
+// 用的终端、命令行等不走代理，使用以下设置
+git config --global http.proxy http://127.0.0.1:7897
+```
+
 ## 如何推送到Github
 
 ```bash
@@ -42,7 +51,6 @@ git push
       git config --global --get-regexp alias
       ```
 
-      
 
 ## 常用命令
 

@@ -8,7 +8,7 @@
 
 ### 普通提示
 ```bash
-?> 我是普通提示
+?> 我是普通提示..
 ```
 
 ?> 我是普通提示 更多语法请访问https://docsify.js.org/#/zh-cn/helpers

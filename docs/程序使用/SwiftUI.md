@@ -1,5 +1,12 @@
 ## API
 
+### NavigationLink
+
+```swift
+// NavigationLink隐藏右侧箭头
+.navigationLinkIndicatorVisibility(.hidden)
+```
+
 ### contentTransition
 
 >   `contentTransition` 是 SwiftUI 里用来做**“同一个 view 内部内容变化”**的过渡动画，不是整页的 `transition`。它最适合文本数字、SF Symbols、颜色/大小变化这种内容更新场景
