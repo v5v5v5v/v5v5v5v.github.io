@@ -1,3 +1,12 @@
+## 终端命令
+
+```bash
+// 清屏 快捷键 win + L
+clear
+// 历史记录
+history
+```
+
 ## 访达指定文件夹
 
 1.   访问指定地址文件夹：导航栏 > 前往 > 前往文件夹，快捷键`CTRL + SHIFT + G`
@@ -46,7 +55,8 @@
 2.   **未存在**，创建并打开`.zshrc`文件
 
      ```bash
-     touch ~/.zshrc && open ~/.zshrc
+     // open -e 文件 = 强制用系统自带 TextEdit（文本编辑）打开文件
+     touch ~/.zshrc && open -e ~/.zshrc
      ```
 
 3.   编辑简写命令
@@ -97,6 +107,23 @@ codewhale app-server --http
 | Snipaste  |     截图软件     |
 
 ## Homebrew
+
+### 常用的命令
+
+```bash
+# 安装
+brew install <包名> 
+# 查看
+brew list --cask
+# 更新
+brew upgrade <包名>         # 只升级指定包
+# 卸载
+brew uninstall --cask <包名> 
+# 查看配置（安装路径、缓存路径等）
+brew config               
+```
+
+### 命令大全
 
 ```bash
 一、安装与卸载

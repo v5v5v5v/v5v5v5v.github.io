@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
   <!-- 自定义样式 -->
-  <link rel="stylesheet" href="./CSS/custom.css">
+  <link rel="stylesheet" href="./CSS/3.css">
   <!-- favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -21,8 +21,6 @@
     window.$docsify = {
       // 项目名称
       name: '好记性不如烂笔头',
-      // 仓库地址（可选，用于右上角显示 GitHub 图标）
-      repo: 'https://github.com/v5v5v5v/v5v5v5v.github.io',
       // 侧边栏：加载根目录下的 _sidebar.md
       loadSidebar: true,
       // 定义路由别名，可以更自由的定义路由规则。 支持正则
@@ -32,7 +30,7 @@
       // 小屏设备下合并导航栏到侧边栏
       mergeNavbar: true,
       // 自动提取当前页面的标题层级（2 表示提取 H1、H2 标题）
-      subMaxLevel: 4,
+      subMaxLevel: 2,
       // 切换页面后是否自动跳转到页面顶部
       auto2top: true,
       // 搜索配置
@@ -73,6 +71,8 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <!-- MD文件更新时间 -->
   <script src="./JS/time-updater.min.js"></script>
+  <!-- toc -->
+  <script src="./JS/toc.js"></script>
 </body>
 
 </html>

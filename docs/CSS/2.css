@@ -1,3 +1,4 @@
+/* ========== 全局基础样式 ========== */
 html {
     font-size: 18px;
 }
@@ -7,14 +8,17 @@ body {
     line-height: 1.3rem;
 }
 
+/* ========== 正文容器 ========== */
 .markdown-section {
-    max-width: 860px;
+    max-width: 80%;
     padding: 20px 30px 100px;
 }
 
+/* ========== 标题层级 ========== */
 .markdown-section h1 {
     font-size: 2.2rem;
     margin: 0 0 1rem;
+    color: #2c3e50;
 }
 
 .markdown-section h2 {
@@ -22,27 +26,35 @@ body {
     margin: 35px 0 15px;
     padding-bottom: 0.5em;
     border-bottom: 1px solid #ddd;
+    color: #42b983;
 }
 
 .markdown-section h3 {
     font-size: 1.4rem;
     margin: 20px 0 7px;
+    color: #2980b9 !important;
 }
 
 .markdown-section h4 {
     font-size: 1.2rem;
+    color: #8e44ad;
 }
 
-.markdown-section h5,
+.markdown-section h5 {
+    font-size: 1rem;
+    color: #d35400;
+}
+
 .markdown-section h6 {
     font-size: 1rem;
+    color: #7f8c8d;
 }
 
+/* ========== 正文段落、列表、引用 ========== */
 .markdown-section p,
 .markdown-section ul,
 .markdown-section ol,
-.markdown-section blockquote,
-.markdown-section table {
+.markdown-section blockquote {
     margin: 0.8em 0;
     line-height: 1.2rem;
 }
@@ -54,6 +66,7 @@ body {
     color: #666;
 }
 
+/* ========== 代码样式 ========== */
 .markdown-section code,
 .markdown-section pre,
 .markdown-section pre>code {
@@ -61,63 +74,47 @@ body {
     font-size: 1rem;
     margin: 0.5em 0;
     padding: 5px 10px;
-    /* 按需调内边距，让代码不要贴边框 */
     border-radius: 20px;
-    /* 可选加圆角更好看 */
 }
 
-/* custom.css */
-/* 修改整个表格 */
-table {
-    width: 100%;
-    /* border-collapse: collapse; */
-    /* 合并边框 */
-    margin: 20px auto;
-    /* 居中并增加外边距 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    /* 增加阴影 */
-}
-
-/* 修改表头 */
-table th {
-    background-color: #42b983;
-    /* Vue 主题的绿色 */
-    color: white;
-    font-weight: bold;
-    padding: 12px 15px;
-    text-align: center;
-}
-
-
-/* custom.css */
-table {
-    width: 100%;
+/* ========== 表格样式========== */
+.markdown-section table {
+    width: 100% !important;
     border-collapse: collapse;
     margin: 20px auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
     border-radius: 6px;
-    overflow: hidden;
 }
 
-/* 表头 */
-table th {
-    background-color: #42b983;
-    color: #fff;
+/* 标题行样式 */
+.markdown-section table th {
+    background-color: #74837cce;
+    color: #ffffff;
     font-weight: 600;
     padding: 12px 15px;
     text-align: center;
     border: 1px solid #e5e7eb;
 }
 
-/* 内容单元格 */
-table td {
+/* 单元格样式 */
+.markdown-section table td {
+    padding: 12px 15px;
     text-align: center;
-    color: #5e0a0e;
+    border: 1px solid #e5e7eb;
+    color: #34495e;
 }
 
+.markdown-section table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
 
-/* 行悬停高亮 */
-table tbody tr:hover {
-    background-color: #0ae04e4d;
+/* 隔行变色 */
+.markdown-section table tbody tr:hover {
+    background-color: #f0fdf4;
     transition: background-color 0.2s ease;
+}
+
+/* 鼠标悬停效果 */
+.markdown-section table tr {
+    border-top: none;
 }

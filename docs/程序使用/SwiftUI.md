@@ -253,7 +253,7 @@ NavigationStack {
 }
 ```
 
-## distortionEffect **几何扭曲**效果
+## distortionEffect 几何扭曲效果
 
 >把每个像素的位置重新映射一下，而不是单纯改颜色
 >
@@ -327,9 +327,7 @@ struct ImageTransitionAnimationView: View {
 }
 ```
 
-
-
-# 英文单词
+## 英文单词
 
 | 单词                   | 意思                                 |
 | :--------------------- | :----------------------------------- |
@@ -372,29 +370,25 @@ struct ImageTransitionAnimationView: View {
 | TopGesture             | 点击手势                             |
 | AppStorage             | 数据储存                             |
 
-# Xcode
+## Xcode
 
-|      说明       |        快捷键        |
-| :-------------: | :------------------: |
-| 折叠\展开 代码  | CTRL + ALT + ⬅️ or ➡️  |
-| 调出系统图片等  |   CTRL + SHIFT + L   |
-| 切换菜单栏Tab页 | CTRL + ⬅️ 或 CTRL + ➡️ |
+|    功能说明     |        快捷键         |
+| :-------------: | :-------------------: |
+| 折叠\展开 代码  | `CTRL + ALT + ⬅️ OR ➡️` |
+| 切换菜单栏Tab页 |    `CTRL + ⬅️ OR ➡️`    |
+|      表情       |  `CTRL + WIN + 空格`  |
+|    系统图标     |  `CTRL + SHIFT + L`   |
 
 1.   修改模拟器设备
      1.   菜单栏 -> Product -> Destination
-2.   弹出表情:`CTRL + WIN + 空格`
-3.   跳出系统自带图标`systemName`:`CTRL + SHIFT + L`
 
-# 注解
+## 注解
 
 |    注解名    | 含义                                                         |
 | :----------: | :----------------------------------------------------------- |
 |  **@State**  | 当状态值发生变化时，视图会自动刷新<br />只能用在 ==**struct**==,适合视图内部的私有状态 |
 | **@Binding** | 双向数据绑定                                                 |
 |    @Model    | SwiftData专属,作用在class上,持久化存储                       |
-|              |                                                              |
-
-# 代码笔记
 
 ## 字符串格式化
 
@@ -432,6 +426,6 @@ Rectangle()
 |   #    | %23        |
 |   &    | %26        |
 
-# 6.犯错点
+## 犯错点
 
-1.   ForEach 是 SwiftUI 的视图构造器，主要用来生成 View，不支持插入数据。使用==for num in 0...10 {}==
+1.   ForEach 是 SwiftUI 的视图构造器，主要用来生成 View，不支持插入数据。使用`for num in 0...10 {}`
