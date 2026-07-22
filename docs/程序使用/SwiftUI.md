@@ -378,6 +378,7 @@ struct ImageTransitionAnimationView: View {
 | 切换菜单栏Tab页 |    `CTRL + ⬅️ OR ➡️`    |
 |      表情       |  `CTRL + WIN + 空格`  |
 |    系统图标     |  `CTRL + SHIFT + L`   |
+|    开发文档     |   `CTRL + SHIFT 0`    |
 
 1.   修改模拟器设备
      1.   菜单栏 -> Product -> Destination
