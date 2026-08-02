@@ -1,0 +1,46 @@
+# 给这个工作流起个名字
+name: Deploy to Cloudflare Pages
+
+# 触发条件：当代码推送到 main 分支时触发
+on:
+  push:
+    branches: [main]
+
+# 定义任务
+jobs:
+  deploy:
+    # 指定运行环境为 Ubuntu Linux
+    runs-on: ubuntu-latest
+    # 设定超时时间
+    timeout-minutes: 5
+
+    # 定义任务步骤
+    steps:
+      # 步骤 1: 拉取你的代码
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 20
+
+      # 步骤 2: 修复文件时间戳（解决你之前遇到问题的关键！）
+      - name: Fix file timestamps
+        run: |
+          git ls-files -z | while IFS= read -r -d '' file; do
+            ts=$(git log -1 --format=%ct -- "$file")
+            if [ -n "$ts" ]; then
+              touch -d "@$ts" "$file"
+            fi
+          done
+
+      # 步骤 3: 部署到 Cloudflare Pages
+      - name: Deploy to Cloudflare Pages
+        # 使用第三方大佬写好的 Action 来完成部署[reference:18][reference:19]
+        uses: cloudflare/wrangler-action@v4
+        with:
+          # 以下三个参数引用我们刚才在 Settings 里创建的 Secrets
+          cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          cloudflare-project-name: "你的Cloudflare Pages项目名称"
+          # 你的静态文件目录，如果你用的是 docs/ 文件夹，就写 docs
+          directory: "docs"
+          # 自动提供的 GitHub 令牌，用于报告部署状态
+          github-token: ${{ secrets.GITHUB_TOKEN }}
