@@ -37,10 +37,8 @@ jobs:
         uses: cloudflare/wrangler-action@v4
         with:
           # 以下三个参数引用我们刚才在 Settings 里创建的 Secrets
-          cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          cloudflare-project-name: "你的Cloudflare Pages项目名称"
-          # 你的静态文件目录，如果你用的是 docs/ 文件夹，就写 docs
-          directory: "docs"
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           # 自动提供的 GitHub 令牌，用于报告部署状态
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy docs --project-name="wxwxwx"
