@@ -41,4 +41,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           # 自动提供的 GitHub 令牌，用于报告部署状态
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: pages deploy docs --project-name="wxwxwx"
+          command: pages deploy docs --project-name="wxwxwx" --branch main --commit-dirty=true
