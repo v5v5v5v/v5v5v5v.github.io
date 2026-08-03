@@ -1,10 +1,16 @@
 # 给这个工作流起个名字
-name: Deploy to Cloudflare Pages
+name: Deploy to Cloudflare & GitHub Pages
 
 # 触发条件：当代码推送到 main 分支时触发
 on:
   push:
     branches: [main]
+
+# 权限：部署 GitHub Pages 需要 pages: write 和 id-token: write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 # 定义任务
 jobs:
@@ -12,7 +18,12 @@ jobs:
     # 指定运行环境为 Ubuntu Linux
     runs-on: ubuntu-latest
     # 设定超时时间
-    timeout-minutes: 5
+    timeout-minutes: 10
+
+    # GitHub Pages 部署环境
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     # 定义任务步骤
     steps:
@@ -33,7 +44,7 @@ jobs:
 
       # 步骤 3: 部署到 Cloudflare Pages
       - name: Deploy to Cloudflare Pages
-        # 使用第三方大佬写好的 Action 来完成部署[reference:18][reference:19]
+        # 使用第三方大佬写好的 Action 来完成部署
         uses: cloudflare/wrangler-action@v4
         with:
           # 以下三个参数引用我们刚才在 Settings 里创建的 Secrets
@@ -42,3 +53,14 @@ jobs:
           # 自动提供的 GitHub 令牌，用于报告部署状态
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           command: pages deploy docs --project-name="wxwxwx" --branch main --commit-dirty=true
+
+      # 步骤 4: 上传构建产物（docs 目录）供 GitHub Pages 部署
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      # 步骤 5: 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
