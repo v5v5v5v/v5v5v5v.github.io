@@ -27,10 +27,10 @@ jobs:
 
     # 定义任务步骤
     steps:
-      # 步骤 1: 拉取你的代码（全量历史，保证 git log 能查到每个文件的提交时间）
+      # 步骤 1: 拉取你的代码
       - uses: actions/checkout@v6
         with:
-          fetch-depth: 0
+          fetch-depth: 20
 
       # 步骤 2: 修复文件时间戳（解决你之前遇到问题的关键！）
       - name: Fix file timestamps
@@ -42,11 +42,7 @@ jobs:
             fi
           done
 
-      # 步骤 3: 生成更新时间数据（git 提交时间，注入 JS/time-updater-git.js）
-      - name: Generate update timestamps
-        run: python3 scripts/generate-time-updater.py
-
-      # 步骤 4: 部署到 Cloudflare Pages
+      # 步骤 3: 部署到 Cloudflare Pages
       - name: Deploy to Cloudflare Pages
         # 使用第三方大佬写好的 Action 来完成部署
         uses: cloudflare/wrangler-action@v4
@@ -58,13 +54,13 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           command: pages deploy docs --project-name="wxwxwx" --branch main --commit-dirty=true
 
-      # 步骤 5: 上传构建产物（docs 目录）供 GitHub Pages 部署
+      # 步骤 4: 上传构建产物（docs 目录）供 GitHub Pages 部署
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
-      # 步骤 6: 部署到 GitHub Pages
+      # 步骤 5: 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

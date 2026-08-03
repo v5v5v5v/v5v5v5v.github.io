@@ -1,4 +1,2 @@
 .DS_Store
 reasonix.toml
-# 生成的更新时间插件（由 scripts/generate-time-updater.py 生成，CI 部署时自动生成）
-docs/JS/time-updater-git.js
