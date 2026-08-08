@@ -1,3 +1,16 @@
+## Xcode
+
+|    功能说明     |        快捷键         |
+| :-------------: | :-------------------: |
+| 折叠\展开 代码  | `CTRL + ALT + ⬅️ OR ➡️` |
+| 切换菜单栏Tab页 |    `CTRL + ⬅️ OR ➡️`    |
+|      表情       |  `CTRL + WIN + 空格`  |
+|    系统图标     |  `CTRL + SHIFT + L`   |
+|    开发文档     |  `CTRL + SHIFT + 0`   |
+
+1.   修改模拟器设备
+     1.   菜单栏 -> Product -> Destination
+
 ## API
 
 ### NavigationLink
@@ -369,19 +382,6 @@ struct ImageTransitionAnimationView: View {
 | onAppear \ onDisappear | 出现时 \ 消失时                      |
 | TopGesture             | 点击手势                             |
 | AppStorage             | 数据储存                             |
-
-## Xcode
-
-|    功能说明     |        快捷键         |
-| :-------------: | :-------------------: |
-| 折叠\展开 代码  | `CTRL + ALT + ⬅️ OR ➡️` |
-| 切换菜单栏Tab页 |    `CTRL + ⬅️ OR ➡️`    |
-|      表情       |  `CTRL + WIN + 空格`  |
-|    系统图标     |  `CTRL + SHIFT + L`   |
-|    开发文档     |   `CTRL + SHIFT 0`    |
-
-1.   修改模拟器设备
-     1.   菜单栏 -> Product -> Destination
 
 ## 注解
 
